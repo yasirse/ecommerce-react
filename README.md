@@ -8,6 +8,6 @@ npm install
 npm i bootstrap@5.3.2
 npm install react-redux
 npm install @reduxjs/toolkit
-npm install react router
+npm install react-router-dom
 npm istall react-icons --save
 ```
