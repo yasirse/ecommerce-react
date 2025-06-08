@@ -90,7 +90,7 @@ const signup = async (req, res) =>
             // send otp to user Email
             sendOTPEmail(email,otp);
             const sendUser = {name,email,otp,token};
-            res.status(200).json(sendUser);
+            res.status(200).json(sendUser);   
     }
     } catch (error) {
       console.log(error);

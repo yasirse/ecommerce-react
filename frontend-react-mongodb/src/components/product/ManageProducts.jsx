@@ -116,11 +116,11 @@ const ManageProducts = () => {
   const fetchProducts = async () => {
     try {
       const response = await fetch(
-        `${apiUrl}/api/product/products`
+        `${apiUrl}/api/product/products?page=1&limit=100`
       );
       const result = await response.json();
       console.log("Result of all products", result);
-      setProducts(result);
+      setProducts(result.records);
     } catch (error) {
       console.error("Error fetching products", error);
     }

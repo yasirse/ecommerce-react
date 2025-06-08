@@ -9,7 +9,10 @@ import "./product.css";
 const stripeKey = import.meta.env.VITE_STRIPE_KEY;
 const apiKey = import.meta.env.VITE_APP_API_URL;
 
-const Cart = () => {
+const Cart = ({ isNavCollapsed, setIsNavCollapsed }) => {
+  const handleNavLinkClick = () => {
+    setIsNavCollapsed(true); // Close the navbar
+  };
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.cart);
   const [totalItems, setTotalItems] = useState();
@@ -21,6 +24,7 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleUpdate = (itemId, newQuantity) => {
+    console.log("update item Id",itemId);
     dispatch(updateProductQuantity({ id: itemId, quantity: newQuantity }));
   };
 
@@ -31,6 +35,7 @@ const Cart = () => {
     navigate("/placeorder");
   };
   const handleStripe = async () => {
+    console.log(products);
     const stripe = await loadStripe(stripeKey);
     const body = {
       products: products,
@@ -73,8 +78,9 @@ const Cart = () => {
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="true"
+        onClick={handleNavLinkClick}
       >
-  <div className="cart-icon-container">
+<div className="cart-icon-container">
     <BsCart3 size={23} />
     {products.length > 0 && (
       <span className="cart-badge">{totalItems}</span>
@@ -82,15 +88,12 @@ const Cart = () => {
   </div>
       </a>
       {/* xxscreen is custom css defined in cart.css */}
-      <ul className="dropdown-menu dropdown-menu-end xxscreen" style={{maxHeight: "80vh", overflowY:"auto"  }} aria-labelledby="cartDropdown"  onClick={(e) => e.stopPropagation()}>
-      <h6 className="w-100  border rounded d-flex justify-content-center bg-custom-danger py-2 pb-2">
-  My Cart Items
-</h6>
-
+      <ul className="dropdown-menu dropdown-menu-end xxcart" style={{maxHeight: "80vh", overflowY:"auto"  }} aria-labelledby="cartDropdown"  onClick={(e) => e.stopPropagation()}>
+      <h6 className="w-100  border rounded d-flex justify-content-center bg-custom-danger py-2 pb-2">My Cart Items</h6>
             {products.length > 0 ? (
             products.map((item) => (
               <CartItem
-                key={item._id}
+                itemid={item._id}
                 item={item}
                 onUpdate={handleUpdate}
                 onRemove={handleRemove}

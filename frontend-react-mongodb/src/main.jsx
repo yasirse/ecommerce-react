@@ -20,7 +20,8 @@ import ErrorPage from "./components/ErrorPage.jsx";
 import ProtectedRouteSign from "./routes/ProtectedRouteSign.jsx";
 import Test from "./components/test.jsx";
 import PlaceOrder from "./components/product/PlaceOrder.jsx";
-import ProductCard from "./components/product/ProductCard.jsx"
+import ProductCard from "./components/product/ProductCard.jsx";
+import CarouselWithPanZoom from "./components/product/CarouselWithPanZoom.jsx";
 
 //const location = useLocation();
 const router = createBrowserRouter([
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
       },
       { path: "/", element: <ProductList /> },
       {path:"/productcard", element:<ProductCard/>},
+      {path:"/productpan", element:<CarouselWithPanZoom/>},
       { path: "*", element: <ErrorPage /> },
       { path: "/otp-signup", element: <OTPSignUp /> },
       { path: "/otp-forgot-password", element: <OTPForgotPass /> },

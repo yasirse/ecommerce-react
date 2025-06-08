@@ -6,24 +6,21 @@ import { useState } from "react";
 import Cart from "./product/Cart";
 import "./navbar.css";
 
+
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleNavLinkClick = () => {
-    const navbarCollapse = document.getElementById('navbarNav');
-    if (navbarCollapse.classList.contains('show')) {
-      const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
-      collapseInstance.hide();
-    }
-  };
   const handleSignOut = (e) => {
     e.preventDefault();
+    setIsNavCollapsed(!isNavCollapsed);
     dispatch(signOut());
     navigate("/sign-in");
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light-pink fixed-top  ">
+    <nav className="navbar navbar-expand-sm navbar-light-pink fixed-top  ">
       <div className="container-fluid">
       <a className="navbar-brand" href="#">
               <img
@@ -31,17 +28,19 @@ const Header = () => {
                 alt="Rollover Kids Company"
               />
       </a>
-     <div className="forsmall-screen d-lg-none "><Cart /></div> 
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <div className="forsmall-screen d-sm-none "><Cart isNavCollapsed={isNavCollapsed}
+            setIsNavCollapsed={setIsNavCollapsed}/></div> 
+      <button className="navbar-toggler " type="button" data-bs-toggle="collapse" onClick={() => setIsNavCollapsed(!isNavCollapsed)}
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
       <ul className="navbar-nav me-auto">
           <li className="nav-item text-sm-center">
-            <Link to="/" className="nav-link active" aria-current="page"  onClick={handleNavLinkClick}>Home</Link>
+            <Link to="/" className="nav-link active" aria-current="page" onClick={() => setIsNavCollapsed(!isNavCollapsed)}  >Home</Link>
           </li>
           <li className="nav-item text-sm-center">
-            <a className="nav-link text-sm-center" href="#">Cloth</a>
+            <a className="nav-link text-sm-center" href="#" onClick={() => setIsNavCollapsed(!isNavCollapsed)}>Cloth</a>
           </li>
           <li className="nav-item text-sm-center">
             <a className="nav-link" href="#">Shoes</a>
@@ -54,7 +53,7 @@ const Header = () => {
                 <Link
                   to="/sign-in"
                   className="nav-link link-body-emphasis "
-                  onClick={handleNavLinkClick}
+                  onClick={() => setIsNavCollapsed(!isNavCollapsed)}
                 >
                   Login
                 </Link>
@@ -63,7 +62,7 @@ const Header = () => {
                 <Link
                   to="/sign-up"
                   className="nav-link link-body-emphasis "
-                  onClick={handleNavLinkClick}
+                  onClick={() => setIsNavCollapsed(!isNavCollapsed)}
                 >
                   Sign up
                 </Link>
@@ -86,7 +85,7 @@ const Header = () => {
                   </a>
                   <ul className="dropdown-menu text-small shadow">
                     <li>
-                      <Link className="dropdown-item" to="/profile" onClick={handleNavLinkClick}>
+                      <Link className="dropdown-item" to="/profile" onClick={() => setIsNavCollapsed(!isNavCollapsed)}>
                         Profile
                       </Link>
                     </li>
@@ -108,7 +107,7 @@ const Header = () => {
               </li>
             </>
           )}
-          <li className="nav-item dropdown d-none d-sm-none d-md-none d-lg-block">
+          <li className="nav-item dropdown d-none d-sm-block">
           <Cart />        
           </li>
         </ul>

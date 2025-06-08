@@ -94,8 +94,10 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="container container-div">
-      <form method="POST" onSubmit={handleSubmit}>
+    <div className="container-fluid d-flex flex-column flex-sm-row justify-content-center align-items-center vh-100  ">
+      <div className="col-1 col-sm-2"></div>
+      <div className="col-12 col-sm-6 ">
+        <form method="POST" onSubmit={handleSubmit} className="text-left p-4  border rounded"   style={{ backgroundColor: "#f0f8ff"}}>
         <h4>Sign up</h4>
         <div className="mb-2">
           <label htmlFor="name" className="form-label">
@@ -199,7 +201,8 @@ const SignUp = () => {
           Sign-Up
         </button>
         <p className="text-danger">{error}</p>
-      </form>
+      </form></div>
+      <div className="col-1 col-sm-2 "></div>
     </div>
   );
 };

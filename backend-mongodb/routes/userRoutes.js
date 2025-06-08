@@ -6,7 +6,6 @@ const { body, validationResult } = require('express-validator');
 const generateOTP = require('../controller/otp');
 const userController=require('../controller/userController');
 
-
 //Route 01: Sign-in route
 userRouter.post('/signin',userController.login);
 //Route-02: Forgot Password route

@@ -21,7 +21,7 @@ const upload = multer({ storage: storage });
 
 // Product Route
 productRouter.post('/placeorder',productController.placeOrder);
-productRouter.post('/add-product',upload.single('file'),productController.addProduct);
+productRouter.post('/add-product',fetchuser,upload.single('file'),productController.addProduct);
 productRouter.post('/update-product',upload.single('file'), productController.updateproduct)
 productRouter.get('/products',productController.allProducts);
 productRouter.post('/deleteProduct',productController.deleteProduct);

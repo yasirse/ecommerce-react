@@ -33,13 +33,13 @@ const ProductItem = ({ product }) => {
   return (
     <>
     
-    <div class="row justify-content-center mx-lg-2 ">
+    <div className="row justify-content-center mx-lg-2 ">
     {/* col-12 col-sm-12 col-md-12 col-lg-12 */}
-            <div class=" my-2 mr-2">
-                <div class="card mx-auto" style={{width: "288px"}}>
+            <div className=" my-2 mr-2">
+                <div className="card mx-auto" style={{width: "288px"}}>
         {product.picture && (
           <img
-            className="border"
+            className="border "
             src={`${apiUrl}/uploads/${product.picture}`}
             alt={product.name}
             style={{

@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/product',productRouter);
 app.use('/api/auth',userRouter);
-//app.listen(port,'192.168.100.6', () => {
+//app.listen(port,'192.168.100.4', () => {
 app.listen(port, () => {
   console.log(`Auth Server listening on port ${port}`)
 })

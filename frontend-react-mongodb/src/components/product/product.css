@@ -1,17 +1,12 @@
-@media (max-width: 767px) {
-    .xxscreen {
+@media (max-width: 575px) {
+    .xxcart {
       width: 80% !important;      
     }
   }
 
+  /* cart back-groud */
   .bg-custom-danger {
     background-color: #ffcccb;
-  }
-
-  .carousel-item img {
-    width: 100%; /* Set the width to 100% of its container */
-    height: 400px; /* Set the height to a fixed value */
-    object-fit: cover; /* Ensures the image covers the entire area without distorting */
   }
 
   
@@ -22,38 +17,18 @@
   }
 
   .thumbnail-image.active {
-    border: 2px solid #007bff;
+    border: 2px solid #d1b4cc;
   }
 
-  /* Add this CSS 
-.carousel-item img {
-  transition: transform 0.5s ease; 
-  cursor: grab;
-}*/
+  .bg-product-card {
+    background-color: #ddd0d0;
+  }
 
-/*.carousel-item img:hover {
-  transform: scale(2); 
-  cursor: grabbing;
-}*/
-
-.zoomable {
-  transition: transform 0.3s ease;
-  cursor: grab; /* Cursor style when hovering */
-}
-
-.zoomed {
-  transform: scale(1.5); /* Adjust zoom level */
-  cursor: grabbing; /* Cursor style when dragging */
-  position: relative; /* Allows movement when zoomed in */
-}
-
-.carousel-item img {
-  object-fit: contain;
-  max-height: 500px;
-  width: 100%;
-}
-
-.carousel-inner {
-  height: 500px; /* Set a height limit for the carousel */
-  overflow: hidden; /* Hide image overflow */
-}
+  .zoom-effect {
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  .zoom-effect:hover {
+    transform: scale(1.2); /* Zoom to 120% */
+  }
+  

@@ -8,6 +8,8 @@
   animation: spin 2s linear infinite;
 }
 
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -131,19 +133,38 @@
 }
 
 /* Sidebar.css */
-
+/* 
 .sidebar {
   min-height: 400px;
 }
 
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* Hide sidebar on small screens */
+    display: none; 
   }
 }
 
-@media (min-width: 750px) {
-  .w-md-20 {
+ */
+
+ @media (min-width: 576px) {
+  .sidebar-md {
     width: 20% !important;
+    transform: translateX(-80%) ;
   }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 40px;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  transform: translateX(0); /* Sidebar is visible initially */
+}
+
+.sidebar-hidden {
+  transform: translateX(-85%);
 }

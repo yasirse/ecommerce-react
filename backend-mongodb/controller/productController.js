@@ -46,25 +46,36 @@ const placeOrder=async(req,res)=>{
     } 
 }
 
-//Endpoint to Get Products List
+//Endpoint to Get Products Listh
 const allProducts = async (req,res)=>{
   try{
-      //console.log("from product list function")
-      const list = await ProductsModel.find();
-      if(list)
-        {
-          //console.log("list received",list);
-          res.status(200).json(list);
-        }
-        else
-        {
-          res.status(404).json({message:"No product found"});
-        }
+    // If Page no. is defined then 
+    const page = parseInt(req.query.page) || 1; // Default to page 1 if no page is provided
+    const limit = parseInt(req.query.limit) || 10; // Default to 10 records per page
+    const skip = (page - 1) * limit;
+    console.log("page=",limit);
+    // Count all documents in the collection
+    const totalRecords = await ProductsModel.countDocuments();
+    console.log("total record=",totalRecords);
+    // Fetch records from MongoDB with pagination
+    const records = await ProductsModel.find()
+    .skip(skip)  // Skip the appropriate number of records
+    .limit(limit);  // Limit the number of records to fetch
+    //console.log("record fetched",records);
+    if(records)
+      {
+        console.log("list received",records);
+        res.status(200).json({records,"totalRecords":totalRecords});
+      }
+      else
+      {
+        res.status(404).json({message:"No product found"});
+      }
     }
-    catch (error)
-    {
-      res.status(500).json({ message: 'Error fetching products'});
-    }
+        catch (error)
+        {
+          res.status(500).json({ message: 'Error fetching products'});
+        }
     }
 // Delete product
 const deleteProduct=async (req,res)=>{
@@ -124,7 +135,7 @@ const updateProductWithoutPic=async (req, res) => {
     res.status(500).json({ message: 'Error adding product'});
   }
 }
-//Integration with Stripe Checkout
+//Integration with Stripe Checkoutt
 const stripCheckout=async (req,res)=>{
   console.log("stripe key value",process.env.STRIPE_PRIVATE);
   const {products} = req.body;

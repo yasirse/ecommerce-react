@@ -79,10 +79,13 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center vh-100 vw-100 bg-primary">
+   
+    <div className="container-fluid d-flex flex-column flex-sm-row justify-content-center align-items-center min-vh-100 ">
       <ToastContainer />
-      <form method="POST" onSubmit={handleSubmit} className="text-left p-4"  /* Added padding */
-    style={{ backgroundColor: "#f0f8ff"}} /* Changed background color and text alignment */>
+      <div className="col-1 col-sm-2"></div>
+      <div className="col-12 col-sm-6 ">
+        <form method="POST" onSubmit={handleSubmit} className="text-left p-4  border rounded"  
+    style={{ backgroundColor: "#f0f8ff"}} >
         <h4>Sign in</h4>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -133,7 +136,11 @@ const SignIn = () => {
         </Link>
         <p className="text-danger">{errorMsg}</p>
       </form>
+      </div>
+      <div className="col-1 col-sm-2 "></div>
     </div>
+   
+
   );
 };
 export default SignIn;
