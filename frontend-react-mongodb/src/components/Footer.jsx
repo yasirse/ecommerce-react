@@ -1,3 +1,7 @@
+/**
+ * Footer component — presentational footer with navigation links.
+ * No props; purely visual.
+ */
 const Footer = () => {
   return (
     <div className="container">

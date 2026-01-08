@@ -1,3 +1,8 @@
+/**
+ * Redux slice for user authentication and profile state.
+ * Exports actions for sign-in/sign-out and tracks loading/error state.
+ * State shape: { currentUser, loading, error }.
+ */
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

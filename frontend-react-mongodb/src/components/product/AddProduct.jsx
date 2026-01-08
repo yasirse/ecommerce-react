@@ -1,3 +1,7 @@
+/**
+ * AddProduct — form to add a new product to the catalog (admin feature).
+ * Uses local state and posts product data to backend API.
+ */
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

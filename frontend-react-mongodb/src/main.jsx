@@ -1,3 +1,10 @@
+/**
+ * Main entry point for the React application
+ * This file sets up routing, Redux store, and renders the root App component
+ * It includes authentication routes and protected routes for user management
+ * The application uses Redux for state management and React Router for navigation
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -24,6 +31,7 @@ import ProductCard from "./components/product/ProductCard.jsx";
 import CarouselWithPanZoom from "./components/product/CarouselWithPanZoom.jsx";
 
 //const location = useLocation();
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,7 +55,7 @@ const router = createBrowserRouter([
           { path: "/sign-in", element: <SignIn /> },
         ],
       },
-      { path: "/", element: <ProductList /> },
+      {path: "/", element: <ProductList /> },
       {path:"/productcard", element:<ProductCard/>},
       {path:"/productpan", element:<CarouselWithPanZoom/>},
       { path: "*", element: <ErrorPage /> },
@@ -63,6 +71,7 @@ const router = createBrowserRouter([
     element: <Test />,
   },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

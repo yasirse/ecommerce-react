@@ -1,4 +1,7 @@
-// src/components/ErrorPage.js
+/**
+ * ErrorPage component — displays a simple error message view.
+ * No props; side-effects: resets current UI tab via store action.
+ */
 import React from "react";
 import { changeTab } from "../store/tabSlice";
 import { useDispatch } from "react-redux";

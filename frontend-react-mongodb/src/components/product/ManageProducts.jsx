@@ -5,6 +5,10 @@ import EditProductModal from "./EditProductModal";
 import { useSelector } from "react-redux";
 const apiUrl = import.meta.env.VITE_APP_API_URL;
 
+/**
+ * ManageProducts — admin view to list, edit and remove products.
+ * Uses product APIs and renders product list with edit capabilities.
+ */
 const ManageProducts = () => {
   const authtoken = useSelector((state) => state.user.currentUser.token);
   const [alert, setAlert] = useState(false);

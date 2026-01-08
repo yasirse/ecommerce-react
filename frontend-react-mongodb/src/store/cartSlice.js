@@ -1,3 +1,8 @@
+/**
+ * Redux slice for shopping cart state management.
+ * Handles product addition, removal, quantity updates, and cart clearing.
+ * State shape: { products: [] }.
+ */
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

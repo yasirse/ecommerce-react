@@ -1,3 +1,8 @@
+/**
+ * User authentication and account routes.
+ * Provides `/signin`, `/signup`, `/forgot-password`, and `/reset-password` endpoints.
+ * Uses express-validator for input validation and delegates logic to `userController`.
+ */
 const express = require('express');
 const { createUser,checkEmailExists,resetPassword } = require('../model/userModel');
 const userRouter = express.Router();

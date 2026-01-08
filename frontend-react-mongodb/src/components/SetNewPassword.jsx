@@ -1,3 +1,7 @@
+/**
+ * SetNewPassword — form to reset user's password after OTP verification.
+ * Expects `location.state.user.email` and calls `/api/auth/reset-password`.
+ */
 import React, { useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_APP_API_URL;

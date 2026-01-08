@@ -1,3 +1,7 @@
+/**
+ * Cart component — shows cart icon and dropdown with cart items.
+ * Props: optional callbacks for navigation; reads cart from store.
+ */
 import React, { useEffect, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
 import CartItem from "./CartItem";

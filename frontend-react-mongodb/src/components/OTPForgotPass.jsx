@@ -1,3 +1,7 @@
+/**
+ * OTP input for forgot-password flow — validates and routes to set-password.
+ * Props/state: expects `location.state` with server OTP and user info.
+ */
 import { useState } from "react";
 import OtpInput from "react-otp-input";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";

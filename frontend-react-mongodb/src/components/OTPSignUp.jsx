@@ -1,3 +1,7 @@
+/**
+ * OTP verification for sign-up — confirms user OTP and completes sign-in.
+ * Dispatches `signInSuccess` and navigates to home on success.
+ */
 import { useState } from "react";
 import OtpInput from "react-otp-input";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";

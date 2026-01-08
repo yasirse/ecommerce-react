@@ -1,3 +1,7 @@
+/**
+ * Spinner — simple loading indicator used across the app.
+ * No props; renders a loading image.
+ */
 import React from "react";
 
 const Spinner = () => {

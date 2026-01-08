@@ -1,3 +1,7 @@
+/**
+ * Sidebar (simple) — vertical navigation for main app pages.
+ * Uses Redux `tab` and `user` state to control navigation and auth flows.
+ */
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { IoHomeOutline } from "react-icons/io5";

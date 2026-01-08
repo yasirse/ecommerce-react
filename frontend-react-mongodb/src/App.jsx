@@ -1,3 +1,8 @@
+/**
+ * App component — root layout composing Header, Sidebar, Outlet and Footer.
+ * Handles top-level UI layout and reads auth state to conditionally show Sidebar.
+ * No props; uses Redux `user` state and React Router `Outlet` for pages.
+ */
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
@@ -9,6 +14,7 @@ import { useSelector } from "react-redux";
 function App() {
   const [selectedTab, setSelectedTab] = useState("Home");
   const { currentUser } = useSelector((state) => state.user);
+ 
   return (
     <>
       <div className="flex-d container-fluid vw-100 ">

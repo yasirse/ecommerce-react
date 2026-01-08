@@ -1,3 +1,7 @@
+/**
+ * Header — responsive top navbar with login/profile and cart components.
+ * Reads `user` from Redux and handles sign-out navigation.
+ */
 import { Link, useNavigate } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";

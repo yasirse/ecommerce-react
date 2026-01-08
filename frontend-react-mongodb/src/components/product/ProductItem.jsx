@@ -1,3 +1,7 @@
+/**
+ * ProductItem — compact product card used in lists/grids.
+ * Props: `product` (object). Handles add-to-cart via Redux `cartSlice`.
+ */
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "../../store/cartSlice";

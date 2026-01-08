@@ -1,4 +1,10 @@
+/**
+ * Redux slice for tab navigation state management.
+ * Tracks the currently selected tab and provides actions to switch between tabs.
+ * State shape: { selectedTab: string }.
+ */
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
   selectedTab:"manage-products",
 }

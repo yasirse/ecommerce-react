@@ -1,3 +1,8 @@
+/**
+ * Routes for product-related operations.
+ * Exposes endpoints for listing, adding, updating, deleting products and placing orders.
+ * Exports an Express `productRouter` configured with file upload handling (multer).
+ */
 const express = require('express');
 const multer = require('multer');
 const mysql = require('mysql');

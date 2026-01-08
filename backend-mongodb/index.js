@@ -1,3 +1,9 @@
+/**
+ * Express server configuration for the ecommerce backend application.
+ * Sets up middleware, routes, and starts the server on port 3000.
+ * Includes product and user authentication routes with CORS and file upload support.
+ */
+
 require("dotenv").config();
 const express = require('express')
 const bodyParser = require('body-parser');

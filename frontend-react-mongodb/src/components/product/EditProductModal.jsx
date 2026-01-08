@@ -1,3 +1,7 @@
+/**
+ * EditProductModal — modal form for editing product details.
+ * Props: product data, onSave callback.
+ */
 import React, { useRef, useState } from "react";
 
 const EditProductModal = ({ show, handleClose, product, handleSave }) => {

@@ -1,3 +1,7 @@
+/**
+ * Header (compact) — top navigation including auth links and cart.
+ * Uses Redux `user` state and exposes sign-in/out navigation.
+ */
 import { Link, useNavigate } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";

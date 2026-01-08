@@ -1,3 +1,7 @@
+/**
+ * SignIn page — sign-in form that authenticates the user and updates Redux.
+ * Dispatches sign-in actions and navigates to home on success.
+ */
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,7 +31,7 @@ const SignIn = () => {
   const reset_pass = location.state || false;
   useEffect(() => {
     if (reset_pass) {
-      console.log("in sign in toast");
+      //console.log("in sign in toast");
       toast.success("Password Updated Successfully. Please Login!", {
         position: "top-right",
         autoClose: 5000,
@@ -83,7 +87,7 @@ const SignIn = () => {
     <div className="container-fluid d-flex flex-column flex-sm-row justify-content-center align-items-center min-vh-100 ">
       <ToastContainer />
       <div className="col-1 col-sm-2"></div>
-      <div className="col-12 col-sm-6 ">
+      <div className="col-12 col-sm-6">
         <form method="POST" onSubmit={handleSubmit} className="text-left p-4  border rounded"  
     style={{ backgroundColor: "#f0f8ff"}} >
         <h4>Sign in</h4>
@@ -107,8 +111,8 @@ const SignIn = () => {
               }}
             >
               {isEmailValid
-                ? "valid email format"
-                : "enter valid email address"}
+                ? ""
+                : "Enter valid email address"}
             </div>
           )}
         </div>

@@ -1,3 +1,7 @@
+/**
+ * ProductCard — detailed product view with image carousel and variants.
+ * Presentational component showing product images, price and Add-to-Cart.
+ */
 import React, { useRef, useEffect,useState  } from 'react';
 import { FaStar } from 'react-icons/fa6';
 import "./product.css";

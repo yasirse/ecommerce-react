@@ -1,11 +1,31 @@
 backend-mysql/.env
 
-backend-mysql/node_modules/
+# Backend env files
+backend-mongodb/.env
+env-backend
 
+# Node modules
+backend-mysql/node_modules/
+backend-mongodb/node_modules/
 frontend-react-mongodb/node_modules/
 frontend-react-mysql/node_modules/
 
-backend-mongodb/node_modules/
+# Frontend env locals
 frontend-react-mongodb/.env.local
-backend-mongodb/.env
 .env.local
+
+# Uploads / media
+**/uploads/
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

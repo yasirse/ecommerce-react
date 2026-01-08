@@ -1,3 +1,7 @@
+/**
+ * CartItem — single cart item display used inside cart dropdown/list.
+ * Props: item (product), quantity, and handlers for update/remove.
+ */
 import React, { useEffect, useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 const apiKey = import.meta.env.VITE_APP_API_URL;

@@ -1,3 +1,7 @@
+/**
+ * PlaceOrder — checkout form that submits an order for cart items.
+ * Reads cart and user token from Redux and calls the place-order API.
+ */
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../store/cartSlice";

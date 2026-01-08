@@ -1,3 +1,7 @@
+/**
+ * ProductList — fetches and renders a paginated product list.
+ * Uses InfiniteScroll and renders `ProductItem` for each product.
+ */
 import React, { useState, useEffect } from "react";
 import { changeTab } from "../../store/tabSlice";
 import ProductItem from "./ProductItem";

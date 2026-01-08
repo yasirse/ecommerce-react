@@ -1,3 +1,7 @@
+/**
+ * Alert component — shows a bootstrap alert message.
+ * Props: { alert: { type, msg } }.
+ */
 import React from "react";
 
 const Alert = ({ alert }) => {

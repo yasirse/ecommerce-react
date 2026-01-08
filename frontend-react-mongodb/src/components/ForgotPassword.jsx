@@ -1,3 +1,7 @@
+/**
+ * ForgotPassword form — collects user email to request a reset code.
+ * Uses `VITE_APP_API_URL` and navigates to OTP flow on success.
+ */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_APP_API_URL;

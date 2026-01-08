@@ -1,3 +1,8 @@
+/**
+ * Redux store configuration with persistence.
+ * Combines reducers for user, cart, and tab state management.
+ * Uses redux-persist to maintain state across browser sessions.
+ */
 import {configureStore, combineReducers} from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartSlice";

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+/**
+ * CarouselWithPanZoom — product image carousel with pan/zoom interactions.
+ * Props: product images array.
+ */
 const CarouselWithPanZoom = () => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [isPanning, setIsPanning] = useState(false);

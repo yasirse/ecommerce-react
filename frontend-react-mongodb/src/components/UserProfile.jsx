@@ -1,3 +1,7 @@
+/**
+ * UserProfile — displays current user's name and email from Redux store.
+ * No props; reads `currentUser` and dispatches tab reset.
+ */
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTab } from "../store/tabSlice";

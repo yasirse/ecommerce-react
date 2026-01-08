@@ -1,3 +1,7 @@
+/**
+ * ProductList (simple) — legacy/simple product list fetch and render.
+ * Renders `ProductItem` components; used as an alternate to InfiniteScroll version.
+ */
 import React, { useState, useEffect } from "react";
 import { changeTab } from "../../store/tabSlice";
 import ProductItem from "./ProductItem";

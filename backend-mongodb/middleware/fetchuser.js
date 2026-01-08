@@ -1,3 +1,11 @@
+/**
+ * JWT authentication middleware.
+ * Extracts and verifies the JWT token from request headers.
+ * Attaches the authenticated user object to the request for downstream routes.
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ */
 var jwt = require('jsonwebtoken');
 const JWT_SECRET = 'goodboy*';
 

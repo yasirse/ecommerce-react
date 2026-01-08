@@ -1,3 +1,7 @@
+/**
+ * SignUp page — registration form that posts to signup API and starts OTP flow.
+ * On success, navigates to OTP verification with signup data in location.state.
+ */
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { changeTab } from "../store/tabSlice";
@@ -58,7 +62,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isEmailValid && isPasswordMatch && isPasswordValid) {
-      console.log(name, email, password);
+      //console.log(name, email, password);
       // Server Request
       try {
         const res = await fetch(`${apiUrl}/api/auth/signup`, {
