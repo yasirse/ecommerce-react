@@ -5,6 +5,7 @@
  */
 import { createSlice } from "@reduxjs/toolkit";
 
+//Setting intial values for user slice
 const initialState = {
   currentUser:null,
   loading:false,

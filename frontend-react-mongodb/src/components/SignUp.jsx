@@ -76,7 +76,7 @@ const SignUp = () => {
         });
 
         const data = await res.json();
-        console.log("Received SignUp data", data);
+        //console.log("Received SignUp data", data);
         if (res.status === 401) {
           setError(data.message);
           return;
@@ -138,8 +138,8 @@ const SignUp = () => {
               }}
             >
               {isEmailValid
-                ? "valid email format"
-                : "enter valid email address"}
+                ? ""
+                : "Enter valid email address"}
             </div>
           )}
         </div>
@@ -196,7 +196,7 @@ const SignUp = () => {
                 color: isPasswordMatch ? "green" : "#FF775e",
               }}
             >
-              {isPasswordMatch ? "passwords match" : "passwords do not match"}
+              {isPasswordMatch ? "Passwords match" : "Passwords do not match"}
             </div>
           )}
         </div>

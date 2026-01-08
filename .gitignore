@@ -11,6 +11,7 @@ frontend-react-mongodb/node_modules/
 frontend-react-mysql/node_modules/
 
 # Frontend env locals
+frontend-react-mongodb/.env
 frontend-react-mongodb/.env.local
 .env.local
 

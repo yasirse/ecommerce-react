@@ -14,7 +14,7 @@ const OTPForgotPass = () => {
   const location = useLocation();
   const server_res = location.state || null; // {otp, user: {id, name,email, password, token}}
   if (!server_res) {
-    console.log(server_res);
+    //console.log(server_res);
     return <Navigate to="/sign-in" />;
   }
   const containerStyle = {
@@ -36,7 +36,7 @@ const OTPForgotPass = () => {
       // OTP is valid, proceed with submission
       setIsInvalid(false);
       if (otp === server_res.otp) {
-        console.log("OTP matched");
+        //console.log("OTP matched");
         navigate("/set-password", { state: server_res });
       } else setIsInvalid(true);
     } else {
